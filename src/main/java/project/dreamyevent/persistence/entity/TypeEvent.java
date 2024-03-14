@@ -1,31 +1,31 @@
-package project.dreamyevent.model;
+package project.dreamyevent.persistence.entity;
 
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-@Table(name = "typeService")
-public class TypeService {
+@Table(name = "typeEvent")
+public class TypeEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_type_service")
+    @Column(name = "id_type_event")
     private Integer id;
     private String nameType;
     private String imageType;
 
 
-    @OneToMany(mappedBy = "typeService")
-    private List<Service> services;
+    @OneToMany(mappedBy = "typeEvent")
+    private List<Event> events;
 
-
-    public TypeService(Integer id, String nameType, String imageType, List<Service> services) {
+    public TypeEvent(Integer id, String nameType, String imageType, List<Event> events) {
         this.id = id;
         this.nameType = nameType;
         this.imageType = imageType;
-        this.services = services;
+        this.events = events;
     }
+
 
     public Integer getId() {
         return id;
@@ -51,12 +51,12 @@ public class TypeService {
         this.imageType = imageType;
     }
 
-    public List<Service> getServices() {
-        return services;
+    public List<Event> getEvents() {
+        return events;
     }
 
-    public void setServices(List<Service> services) {
-        this.services = services;
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
 
 }

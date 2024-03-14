@@ -1,4 +1,4 @@
-package project.dreamyevent.model;
+package project.dreamyevent.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
