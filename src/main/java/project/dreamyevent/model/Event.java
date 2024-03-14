@@ -19,6 +19,8 @@ public class Event {
     private String address;
     private String city;
     private String country;
+
+    @Column(name = "transaction_state")
     private int transactionState;
 
 
@@ -31,10 +33,9 @@ public class Event {
     private TypeEvent typeEvent;
 
     @OneToMany(mappedBy = "event")
-    private List<EventHasService> eventHasService;
+    private List<EventService> eventServices;
 
-
-    public Event(Integer id, String name, Date date, String address, String city, String country, int transactionState, Customer customer, TypeEvent typeEvent, List<EventHasService> eventHasService) {
+    public Event(Integer id, String name, Date date, String address, String city, String country, int transactionState, Customer customer, TypeEvent typeEvent, List<EventService> eventServices) {
         this.id = id;
         this.name = name;
         this.date = date;
@@ -44,7 +45,7 @@ public class Event {
         this.transactionState = transactionState;
         this.customer = customer;
         this.typeEvent = typeEvent;
-        this.eventHasService = eventHasService;
+        this.eventServices = eventServices;
     }
 
     public Integer getId() {
@@ -119,13 +120,11 @@ public class Event {
         this.typeEvent = typeEvent;
     }
 
-    public List<EventHasService> getEventHasService() {
-        return eventHasService;
+    public List<EventService> getEventServices() {
+        return eventServices;
     }
 
-    public void setEventHasService(List<EventHasService> eventHasService) {
-        this.eventHasService = eventHasService;
+    public void setEventServices(List<EventService> eventServices) {
+        this.eventServices = eventServices;
     }
-
-
 }

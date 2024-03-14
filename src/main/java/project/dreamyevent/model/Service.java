@@ -41,10 +41,10 @@ public class Service {
     private List<Comment> coments;
 
     @OneToMany(mappedBy = "service")
-    private List<EventHasService> eventHasServices;
+    private List<EventService> eventServices;
 
 
-    public Service(Integer id, String name, String description, String price, String location, String city, String country, int amountPeople, String characteristics, Supplier supplier, TypeService typeService, List<ImageService> imageServices, List<Favorite> favorites, List<Comment> coments, List<EventHasService> eventHasServices) {
+    public Service(Integer id, String name, String description, String price, String location, String city, String country, int amountPeople, String characteristics, Supplier supplier, TypeService typeService, List<ImageService> imageServices, List<Favorite> favorites, List<Comment> coments, List<EventService> eventServices) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -59,7 +59,7 @@ public class Service {
         this.imageServices = imageServices;
         this.favorites = favorites;
         this.coments = coments;
-        this.eventHasServices = eventHasServices;
+        this.eventServices = eventServices;
     }
 
     public Integer getId() {
@@ -174,12 +174,11 @@ public class Service {
         this.coments = coments;
     }
 
-    public List<EventHasService> getEventHasServices() {
-        return eventHasServices;
+    public List<EventService> getEventServices() {
+        return eventServices;
     }
 
-    public void setEventHasServices(List<EventHasService> eventHasServices) {
-        this.eventHasServices = eventHasServices;
+    public void setEventServices(List<EventService> eventServices) {
+        this.eventServices = eventServices;
     }
-
 }

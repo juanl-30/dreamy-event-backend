@@ -1,25 +1,28 @@
 package project.dreamyevent.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "eventHasService")
-public class EventHasService {
+public class EventService {
+
+    @EmbeddedId
+    private EventServicePK id;
 
     @ManyToOne
-    @JoinColumn(name = "idEvent",insertable = false, updatable = false)
+    @JoinColumn(name = "id_event", insertable = false, updatable = false)
     private Event event;
 
     @ManyToOne
-    @JoinColumn(name = "idService",insertable = false, updatable = false)
+    @JoinColumn(name = "id_service", insertable = false, updatable = false)
     private Service service;
 
-    public EventHasService(Event event, Service service) {
-        this.event = event;
-        this.service = service;
+    public EventServicePK getId() {
+        return id;
+    }
+
+    public void setId(EventServicePK id) {
+        this.id = id;
     }
 
     public Event getEvent() {
@@ -37,5 +40,4 @@ public class EventHasService {
     public void setService(Service service) {
         this.service = service;
     }
-
 }
