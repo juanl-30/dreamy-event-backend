@@ -10,6 +10,7 @@ public class ImageService {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_image")
     private Integer id;
+    @Column(name = "url_image")
     private String urlImage;
 
     @ManyToOne

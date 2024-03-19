@@ -14,11 +14,10 @@ public class Service {
     private Integer id;
     private String name;
     private String description;
-    private String price;
+    private double price;
     private String location;
     private String city;
     private String country;
-
     @Column(name = "amount_people")
     private int amountPeople;
     private String characteristics;
@@ -35,16 +34,10 @@ public class Service {
     private List<ImageService> imageServices;
 
     @OneToMany(mappedBy = "service")
-    private List<Favorite> favorites;
-
-    @OneToMany(mappedBy = "service")
     private List<Comment> coments;
 
-    @OneToMany(mappedBy = "service")
-    private List<EventService> eventServices;
 
-
-    public Service(Integer id, String name, String description, String price, String location, String city, String country, int amountPeople, String characteristics, Supplier supplier, TypeService typeService, List<ImageService> imageServices, List<Favorite> favorites, List<Comment> coments, List<EventService> eventServices) {
+    public Service(Integer id, String name, String description, double price, String location, String city, String country, int amountPeople, String characteristics, Supplier supplier, TypeService typeService, List<ImageService> imageServices, List<Comment> coments) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -57,9 +50,7 @@ public class Service {
         this.supplier = supplier;
         this.typeService = typeService;
         this.imageServices = imageServices;
-        this.favorites = favorites;
         this.coments = coments;
-        this.eventServices = eventServices;
     }
 
     public Integer getId() {
@@ -86,11 +77,11 @@ public class Service {
         this.description = description;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -158,27 +149,11 @@ public class Service {
         this.imageServices = imageServices;
     }
 
-    public List<Favorite> getFavorites() {
-        return favorites;
-    }
-
-    public void setFavorites(List<Favorite> favorites) {
-        this.favorites = favorites;
-    }
-
     public List<Comment> getComents() {
         return coments;
     }
 
     public void setComents(List<Comment> coments) {
         this.coments = coments;
-    }
-
-    public List<EventService> getEventServices() {
-        return eventServices;
-    }
-
-    public void setEventServices(List<EventService> eventServices) {
-        this.eventServices = eventServices;
     }
 }
