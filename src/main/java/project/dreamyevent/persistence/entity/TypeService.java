@@ -12,7 +12,9 @@ public class TypeService {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type_service")
     private Integer id;
-    private String nameType;
+    @Column(name = "name_type")
+    private String type;
+    @Column(name = "image_type")
     private String imageType;
 
 
@@ -20,9 +22,9 @@ public class TypeService {
     private List<Service> services;
 
 
-    public TypeService(Integer id, String nameType, String imageType, List<Service> services) {
+    public TypeService(Integer id, String type, String imageType, List<Service> services) {
         this.id = id;
-        this.nameType = nameType;
+        this.type = type;
         this.imageType = imageType;
         this.services = services;
     }
@@ -35,12 +37,12 @@ public class TypeService {
         this.id = id;
     }
 
-    public String getNameType() {
-        return nameType;
+    public String getType() {
+        return type;
     }
 
-    public void setNameType(String nameType) {
-        this.nameType = nameType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getImageType() {
@@ -58,5 +60,4 @@ public class TypeService {
     public void setServices(List<Service> services) {
         this.services = services;
     }
-
 }

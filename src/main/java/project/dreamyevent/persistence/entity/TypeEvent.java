@@ -12,20 +12,19 @@ public class TypeEvent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type_event")
     private Integer id;
-    private String nameType;
+    private String type;
     private String imageType;
 
 
     @OneToMany(mappedBy = "typeEvent")
     private List<Event> events;
 
-    public TypeEvent(Integer id, String nameType, String imageType, List<Event> events) {
+    public TypeEvent(Integer id, String type, String imageType, List<Event> events) {
         this.id = id;
-        this.nameType = nameType;
+        this.type = type;
         this.imageType = imageType;
         this.events = events;
     }
-
 
     public Integer getId() {
         return id;
@@ -35,12 +34,12 @@ public class TypeEvent {
         this.id = id;
     }
 
-    public String getNameType() {
-        return nameType;
+    public String getType() {
+        return type;
     }
 
-    public void setNameType(String nameType) {
-        this.nameType = nameType;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getImageType() {
@@ -58,5 +57,4 @@ public class TypeEvent {
     public void setEvents(List<Event> events) {
         this.events = events;
     }
-
 }
