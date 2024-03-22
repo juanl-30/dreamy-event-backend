@@ -19,13 +19,6 @@ public class TypeEvent {
     @OneToMany(mappedBy = "typeEvent")
     private List<Event> events;
 
-    public TypeEvent(Integer id, String type, String imageType, List<Event> events) {
-        this.id = id;
-        this.type = type;
-        this.imageType = imageType;
-        this.events = events;
-    }
-
     public Integer getId() {
         return id;
     }

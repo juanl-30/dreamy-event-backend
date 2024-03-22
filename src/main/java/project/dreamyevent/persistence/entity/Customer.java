@@ -19,7 +19,6 @@ public class Customer {
     private String country;
     private String img;
 
-
     @ManyToOne
     @JoinColumn(name = "idUser", insertable = false, updatable = false)
     private User user;
@@ -32,21 +31,6 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private List<Comment> coments;
-
-
-    public Customer(Integer id, String name, String lastname, int phone, String city, String country, String img, User user, List<Event> events, List<Favorite> favorites, List<Comment> coments) {
-        this.id = id;
-        this.name = name;
-        this.lastname = lastname;
-        this.phone = phone;
-        this.city = city;
-        this.country = country;
-        this.img = img;
-        this.user = user;
-        this.events = events;
-        this.favorites = favorites;
-        this.coments = coments;
-    }
 
     public Integer getId() {
         return id;

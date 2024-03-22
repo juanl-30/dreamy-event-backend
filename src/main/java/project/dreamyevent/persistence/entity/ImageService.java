@@ -17,13 +17,6 @@ public class ImageService {
     @JoinColumn(name = "idService", insertable = false, updatable = false)
     private Service service;
 
-
-    public ImageService(Integer id, String urlImage, Service service) {
-        this.id = id;
-        this.urlImage = urlImage;
-        this.service = service;
-    }
-
     public Integer getId() {
         return id;
     }

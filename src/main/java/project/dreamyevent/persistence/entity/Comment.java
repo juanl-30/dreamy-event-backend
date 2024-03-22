@@ -21,16 +21,6 @@ public class Comment {
     @JoinColumn(name = "idService", insertable = false, updatable = false)
     private Service service;
 
-
-    public Comment(Integer id, String comments, int qualification, Customer customer, Service service) {
-        this.id = id;
-        this.comments = comments;
-        this.qualification = qualification;
-        this.customer = customer;
-        this.service = service;
-    }
-
-
     public Integer getId() {
         return id;
     }

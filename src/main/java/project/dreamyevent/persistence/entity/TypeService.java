@@ -17,17 +17,8 @@ public class TypeService {
     @Column(name = "image_type")
     private String imageType;
 
-
     @OneToMany(mappedBy = "typeService")
     private List<Service> services;
-
-
-    public TypeService(Integer id, String type, String imageType, List<Service> services) {
-        this.id = id;
-        this.type = type;
-        this.imageType = imageType;
-        this.services = services;
-    }
 
     public Integer getId() {
         return id;

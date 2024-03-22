@@ -26,18 +26,6 @@ public class Supplier {
     @OneToMany(mappedBy = "supplier")
     private List<Service> services;
 
-    public Supplier(Integer id, String name, String email, int phone, double rut, String city, String image, User user, List<Service> services) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.rut = rut;
-        this.city = city;
-        this.image = image;
-        this.user = user;
-        this.services = services;
-    }
-
     public Integer getId() {
         return id;
     }

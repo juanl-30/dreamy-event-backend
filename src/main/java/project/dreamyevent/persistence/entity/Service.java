@@ -23,11 +23,11 @@ public class Service {
     private String characteristics;
 
     @ManyToOne
-    @JoinColumn(name = "idSupplier", insertable = false, updatable = false)
+    @JoinColumn(name = "id_supplier", insertable = false, updatable = false)
     private Supplier supplier;
 
     @ManyToOne
-    @JoinColumn(name = "idTypeService", insertable = false, updatable = false)
+    @JoinColumn(name = "id_type_service", insertable = false, updatable = false)
     private TypeService typeService;
 
     @OneToMany(mappedBy = "service")
@@ -35,23 +35,6 @@ public class Service {
 
     @OneToMany(mappedBy = "service")
     private List<Comment> coments;
-
-
-    public Service(Integer id, String name, String description, double price, String location, String city, String country, int amountPeople, String characteristics, Supplier supplier, TypeService typeService, List<ImageService> imageServices, List<Comment> coments) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.price = price;
-        this.location = location;
-        this.city = city;
-        this.country = country;
-        this.amountPeople = amountPeople;
-        this.characteristics = characteristics;
-        this.supplier = supplier;
-        this.typeService = typeService;
-        this.imageServices = imageServices;
-        this.coments = coments;
-    }
 
     public Integer getId() {
         return id;

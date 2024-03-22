@@ -19,13 +19,6 @@ public class Favorite {
     @JoinColumn(name = "idService", insertable = false, updatable = false)
     private Service service;
 
-
-    public Favorite(Integer id, Service service, Customer customer) {
-        this.id = id;
-        this.service = service;
-        this.customer = customer;
-    }
-
     public Integer getId() {
         return id;
     }

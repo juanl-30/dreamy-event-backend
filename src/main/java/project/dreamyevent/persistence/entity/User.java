@@ -24,15 +24,6 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Customer> customers;
 
-    public User(Integer id, String email, String password, String recoveryCode, List<Supplier> suppliers, List<Customer> customers) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.recoveryCode = recoveryCode;
-        this.suppliers = suppliers;
-        this.customers = customers;
-    }
-
     public Integer getId() {
         return id;
     }

@@ -14,12 +14,6 @@ public class EventServicePK implements Serializable {
     @Column(name = "id_service")
     private Integer idService;
 
-
-    public EventServicePK(Integer idEvent, Integer idService) {
-        this.idEvent = idEvent;
-        this.idService = idService;
-    }
-
     public Integer getIdEvent() {
         return idEvent;
     }

@@ -35,19 +35,6 @@ public class Event {
     @OneToMany(mappedBy = "event")
     private List<EventService> eventServices;
 
-    public Event(Integer id, String name, Date date, String address, String city, String country, int transactionState, Customer customer, TypeEvent typeEvent, List<EventService> eventServices) {
-        this.id = id;
-        this.name = name;
-        this.date = date;
-        this.address = address;
-        this.city = city;
-        this.country = country;
-        this.transactionState = transactionState;
-        this.customer = customer;
-        this.typeEvent = typeEvent;
-        this.eventServices = eventServices;
-    }
-
     public Integer getId() {
         return id;
     }
