@@ -18,11 +18,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    runtimeOnly 'org.postgresql:postgresql'
+
+    //  mapstruct.ord -> plugin mapstruct support
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
+    //  dependencia para los CORS
+    testImplementation 'org.apache.httpcomponents.client5:httpclient5'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
