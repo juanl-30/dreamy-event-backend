@@ -22,8 +22,8 @@ public interface ServiceMapper {
             @Mapping(source = "country", target = "country"),
             @Mapping(source = "amountPeople", target = "amountPeople"),
             @Mapping(source = "characteristics", target = "characteristics"),
-            @Mapping(source = "supplier", target = "supplier"),
-            @Mapping(source = "typeService", target = "typeService")
+//            @Mapping(source = "supplier", target = "supplierDomain"),
+            @Mapping(source = "typeService", target = "typeServiceDomain")
     })
     ServiceDomain toServiceDomain(Service service);
 

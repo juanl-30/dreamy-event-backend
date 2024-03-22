@@ -1,5 +1,6 @@
 package project.dreamyevent.persistence.mapper;
 
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -12,7 +13,10 @@ public interface TypeServiceMapper {
             @Mapping(source = "id", target = "id"),
             @Mapping(source = "type", target = "type"),
             @Mapping(source = "imageType", target = "imageType")
+
     })
-    @Mapping(target = "services", ignore = true)
     TypeServiceDomain toTypeServiceDomain(TypeService typeService);
+
+    @InheritInverseConfiguration
+    TypeService toTypeService(TypeServiceDomain typeServiceDomain);
 }
