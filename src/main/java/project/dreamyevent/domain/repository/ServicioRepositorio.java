@@ -6,13 +6,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ServicioRepositorio {
-    List<ServiceDomain> listar();
 
-    ServiceDomain guardar(ServiceDomain servicio);
+    List<ServiceDomain> getAll();
 
-    Optional<List<ServiceDomain>> traerId(int productoId);
+    Optional<ServiceDomain> getService(Integer id);
 
-    void actualizar(ServiceDomain servicio);
+    ServiceDomain save(ServiceDomain serviceDomain);
 
-    void eliminar(int productoId);
+    ServiceDomain update(ServiceDomain serviceDomain);
+
+    void delete(Integer id);
 }

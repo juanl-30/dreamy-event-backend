@@ -13,6 +13,6 @@ public interface TypeServiceMapper {
             @Mapping(source = "type", target = "type"),
             @Mapping(source = "imageType", target = "imageType")
     })
-    @Mapping(target = "services",ignore = true)
+    @Mapping(target = "services", ignore = true)
     TypeServiceDomain toTypeServiceDomain(TypeService typeService);
 }
