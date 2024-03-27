@@ -14,7 +14,6 @@ public class ServiceService {
     @Autowired
     private ServicioRepositorio servicioRepositorio;
 
-
     public List<ServiceDomain> getAll() {
         return servicioRepositorio.getAll();
     }
